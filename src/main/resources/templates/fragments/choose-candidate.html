@@ -1,0 +1,67 @@
+<div th:fragment="choose-candidate">
+    <!--Modal--> 
+    <div class="modal fade" id="interviewModalAdd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0">
+                    <h5 class="modal-title" id="exampleModalLabel">Interviews</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="formModalAdd" name="myForm" action="#" method="post" class="needs-validation" novalidate>
+                        <div class="form-group">
+                            <label for="interviewDateAdd">Interview Date</label>
+                            <input type="datetime-local" id="interviewDateAdd" name="interviewDateAdd" class="form-control" aria-describedby="interviewDateAddHelp" placeholder="Enter your Interview Date" required>
+                            <div class="invalid-feedback" style="font-size: 12">
+                                Please input your Interview Date
+                            </div>
+                        </div>
+                        <div class="form-group" style="display: none">
+                            <label for="resultAdd">Result</label>
+                            <select class="form-control" id="resultAdd">
+                                <option value="IN REVIEW" selected>IN REVIEW</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="display: none">
+                            <label for="statusAdd">Status</label>
+                            <select class="form-control" id="statusAdd">
+                                <option value="PROCESS" selected>PROCESS</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="interviewViaAdd">Interview Via</label>
+                            <select class="form-control" id="interviewViaAdd">
+                                <option value="" selected disabled hidden>Choose Here</option>
+                                <option value="ONLINE">ONLINE</option>
+                                <option value="OFFLINE">OFFLINE</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="noteAdd" id="notelabel" style="display: none">Note</label>
+                            <input type="text" id="noteAdd" name="noteAdd" class="form-control" aria-describedby="noteAddHelp" placeholder="Write your note" style="display: none">
+                        </div>
+                        <div class="form-group">
+                            <label for="clientIdAdd">Client</label>
+                            <select class="form-control" id="clientIdAdd" name="clientIdAdd">
+                                <option th:each="client : ${clients}" th:text="${client.instansi}" th:value="${client.clientId}"></option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="display: none">
+                            <label for="empName">Employee</label>
+                            <input type="text" id="empName" class="form-control" readonly>
+<!--                            <select class="form-control" id="empIdAdd" name="empIdAdd">
+                                <option th:each="employee : ${employees}" th:text="${employee.name}" th:value="${employee.empId}"></option>
+                            </select>-->
+                        </div>
+                        <div class="modal-footer border-top-0 d-flex justify-content-center">
+                            <button type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--     End Of Modal -->
+</div>

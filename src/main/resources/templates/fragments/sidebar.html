@@ -1,0 +1,146 @@
+<div id='sidebar' th:fragment="sidebar">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" style="height: 100%" id="accordionSidebar">
+
+        <!-- Sidebar - Brand -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
+            <div class="sidebar-brand-icon rotate-n-15">
+                <i class="fas fa-globe" style="color: #B9FAF8;"></i>
+            </div>
+            <div class="sidebar-brand-text mx-3" style="font-family: cursive; color: #B9FAF8">R-Placement</div>
+        </a>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0">
+
+        <!-- Nav Item - Dashboard -->
+        <li th:class="${#strings.equals(#httpServletRequest.requestURI, '/dashboard')} ? 'nav-item active' : 'nav-item'">
+            <a class="nav-link" href="/dashboard">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Dashboard</span></a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            Navigation
+        </div>
+
+        <!--Nav Item - Charts-->
+        <li th:class="${#strings.equals(#httpServletRequest.requestURI, '/candidate')} ? 'nav-item active' : 'nav-item'">
+            <a sec:authorize="hasRole('ROLE_RM')" class="nav-link" href="/candidate">
+                <i class="fas fa-fw fa-id-badge"></i>
+                <span>Candidate</span>
+            </a>
+        </li>
+
+        <!--Nav Item - Charts-->
+        <li th:class="${#strings.equals(#httpServletRequest.requestURI, '/client')} ? 'nav-item active' : 'nav-item'">
+            <a sec:authorize="hasRole('ROLE_RM')" class="nav-link" href="/client">
+                <i class="fas fa-fw fa-handshake"></i>
+                <span>Client</span>
+            </a>
+        </li>
+
+        <!--Nav Item - Charts-->
+        <li th:class="${#strings.equals(#httpServletRequest.requestURI, '/developer')} ? 'nav-item active' : 'nav-item'">
+            <a sec:authorize="hasRole('ROLE_RM')" class="nav-link" href="/developer">
+                <i class="fas fa-fw fa-user-circle"></i>
+                <span>Developer</span>
+            </a>
+        </li>
+
+        <!--Nav Item - Charts-->
+        <li th:class="${#strings.equals(#httpServletRequest.requestURI, '/employee')} ? 'nav-item active' : 'nav-item'">
+            <a sec:authorize="hasRole('ROLE_RM')" class="nav-link" href="/employee">
+                <i class="fas fa-fw fa-user"></i>
+                <span>Employee</span>
+            </a>
+        </li>
+
+        <!--Nav Item - Charts-->
+        <li th:class="${#strings.equals(#httpServletRequest.requestURI, '/empskill/form')} ? 'nav-item active' : 'nav-item'">
+            <a sec:authorize="hasRole('ROLE_DEVELOPER')" class="nav-link" href="/empskill/form">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Add Skill</span>
+            </a>
+        </li>
+
+        <!--Nav Item - Charts-->
+        <li th:class="${#strings.equals(#httpServletRequest.requestURI, '/empskill')} ? 'nav-item active' : 'nav-item'">
+            <a sec:authorize="hasRole('ROLE_DEVELOPER')" class="nav-link" href="/empskill">
+                <i class="fas fa-fw fa-id-card"></i>
+                <span>Employee Skill</span>
+            </a>
+        </li>
+
+
+        <!--Nav Item - Charts-->
+        <li th:class="${#strings.equals(#httpServletRequest.requestURI, '/interview')} ? 'nav-item active' : 'nav-item'">
+            <a sec:authorize="hasRole('ROLE_RM')" class="nav-link" href="/interview">
+                <i class="fas fa-fw fa-calendar"></i>
+                <span>Interview</span>
+            </a>
+        </li>
+
+        <!--Nav Item - Charts-->
+        <li th:class="${#strings.equals(#httpServletRequest.requestURI, '/interview/accept')} ? 'nav-item active' : 'nav-item'">
+            <a sec:authorize="hasRole('ROLE_RM')" class="nav-link" href="/interview/accept">
+                <i class="fas fa-fw fa-calendar"></i>
+                <span>Interview Accept</span>
+            </a>
+        </li>
+        
+        <!--Nav Item - Charts-->
+        <li th:class="${#strings.equals(#httpServletRequest.requestURI, '/interview/reject')} ? 'nav-item active' : 'nav-item'">
+            <a sec:authorize="hasRole('ROLE_RM')" class="nav-link" href="/interview/reject">
+                <i class="fas fa-fw fa-calendar"></i>
+                <span>Interview Reject</span>
+            </a>
+        </li>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+               aria-expanded="true" aria-controls="collapsePages">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Tables</span>
+            </a>
+            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Data Tables:</h6>
+                    <a sec:authorize="hasRole('ROLE_RM')" class="collapse-item" th:href="@{/candidate}">Candidate</a>
+                    <a sec:authorize="hasRole('ROLE_RM')" class="collapse-item" th:href="@{/client}">Client</a>
+                    <a sec:authorize="hasRole('ROLE_RM')" class="collapse-item" th:href="@{/developer}">Developer</a>
+                    <a sec:authorize="hasRole('ROLE_RM')" class="collapse-item" th:href="@{/employee}">Employee</a>
+                    <a sec:authorize="hasRole('ROLE_DEVELOPER')" class="collapse-item" th:href="@{/empskill}">Employee Skill</a>
+                    <a sec:authorize="hasRole('ROLE_RM')" class="collapse-item" th:href="@{/interview}">Interview</a>
+                    <a sec:authorize="hasRole('ROLE_RM')" class="collapse-item" th:href="@{/interview/accept}">Interview Accept</a>
+                    <a sec:authorize="hasRole('ROLE_RM')" class="collapse-item" th:href="@{/interview/reject}">Interview Reject</a>
+                    <div class="collapse-divider"></div>
+                </div>
+            </div>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+
+        <!-- Sidebar Toggler (Sidebar) -->
+        <div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+
+        <!-- Sidebar Message -->
+        <div class="sidebar-card">
+            <img class="sidebar-card-illustration mb-2" src="/css/img/undraw_rocket.svg" alt="">
+            <p class="text-center mb-2"><strong>Resource Placement</strong> is packed with premium features, components, and more!</p>
+            <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
+        </div>
+
+    </ul>
+    <!-- End of Sidebar -->
+
+</div>

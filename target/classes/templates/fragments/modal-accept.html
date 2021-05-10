@@ -1,0 +1,61 @@
+<div th:fragment="modal-accept">
+    <!-- Modal -->
+    <div class="modal fade" id="interviewModalEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0">
+                    <!--<h5 class="modal-title" id="exampleModalLabel">Interviews</h5>-->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="formModalEdit" name="myForm" action="#" method="post" class="needs-validation" novalidate>
+                        <h1 style="text-align: center">Are you sure?</h1>
+                        <div class="form-group" style="display: none">
+                            <label for="interviewDateEdit">Interview Date</label>
+                            <input disabled type="date" id="interviewDateEdit" name="interviewDateEdit" class="form-control" aria-describedby="interviewDateEditHelp" placeholder="Enter your Interview Date" required>
+                            <div class="invalid-feedback" style="font-size: 12">
+                                Please input your Interview Date
+                            </div>
+                        </div>
+                        <div class="form-group" style="display: none">
+                            <label for="resultDateEdit">Result Date</label>
+                            <input type="date" id="resultDateEdit" name="resultDateEdit" class="form-control" aria-describedby="resultDateEditHelp" placeholder="Enter your Result Date">
+                        </div>
+                        <div class="form-group" style="display: none">
+                            <label for="resultEdit">Result</label>
+                            <select class="form-control" id="resultEdit" name="resultEdit">
+                                <option value="ACCEPT" selected >ACCEPT</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="display: none">
+                            <label for="statusEdit">Status</label>
+                            <input type="text" id="statusEdit" name="statusEdit" class="form-control" aria-describedby="statusEditHelp" placeholder="Write your note">
+                        </div>
+                        <div class="form-group" style="display: none">
+                            <label for="interviewViaEdit">Interview Via</label>
+                            <input type="text" id="interviewViaEdit" name="interviewViaEdit" class="form-control" aria-describedby="interviewViaEditHelp" placeholder="Write your note">
+                        </div>
+                        <div class="form-group" style="display: none">
+                            <label for="noteEdit" id="notelabel">Note</label>
+                            <input type="text" id="noteEdit" name="noteEdit" class="form-control" aria-describedby="noteEditHelp" placeholder="Write your note">
+                        </div>
+                        <div class="form-group" style="display: none">
+                            <label for="clientIdEdit">Client</label>
+                            <input type="text" id="clientIdEdit" name="clientIdEdit" class="form-control" aria-describedby="clientIdEditHelp">
+                        </div>
+                        <div class="form-group" style="display: none">
+                            <label for="empIdEdit">Employee</label>
+                            <input type="text" id="empIdEdit" name="empIdEdit" class="form-control" aria-describedby="empIdEditHelp">
+                        </div>
+                        <div class="modal-footer border-top-0 d-flex justify-content-center">
+                            <button type="submit" class="btn btn-success">Yes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Of Modal -->
+</div>

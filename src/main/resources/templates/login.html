@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <link rel="stylesheet" th:href="@{/css/style-login.css}">
+    <head th:replace="fragments/head :: head"></head>
+    <body style="background-color: #4e73df;">
+        <div class="container px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto" style="background-color: #4e73df;">
+            <div class="card card0 border-0">
+                <div class="row d-flex">
+                    <div class="col-lg-6">
+                        <div class="card1 pb-5">
+                            <div class="row px-3 justify-content-center mt-4 mb-5 border-line">
+                                <img style="width: 220px" src="https://1.bp.blogspot.com/-QwK06XNoC8c/X7j-uEjGjpI/AAAAAAAAD2I/HHk0zgJnVdU_CdCQZkIs5JLfzRyma2wxgCLcBGAsYHQ/s636/PT%2BMetrodata%2BElectronics%2BTbk.png" class="logo">
+                                <img src="https://www.depoktren.com/wp-content/uploads/2018/08/teamwork.png" class="image"> </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card2 card border-0 px-4 py-5">
+                            <div class="row mb-4 px-3">
+                                <h2 class="mb-0 mr-4 mt-2 justify-content-center mt-4 mb-3 border-line">Sign in Now</h2>
+                            </div>
+
+                            <p th:text="${param.error} ? 'Username or password incorrect' : ''" th:class="${param.error} ? 'alert alert-danger' : ''"></p>
+                            <p th:text="${param.logout} ? 'You have been logged out' : ''"></p>
+                            <form th:action="@{/login}" method="post" th:object="${auth}" class="needs-validation" novalidate>
+                                <div class="row px-3">
+                                    <label for="username" class="mb-1"><h6 class="mb-0 text-sm">Username</h6></label>
+                                    <input class="form-control" type="text" id="username" placeholder="Enter your username" th:field="*{username}"required autofocus="autofocus"> 
+                                    <div class="invalid-feedback" style="font-size: 12">
+                                        Please input a valid username
+                                    </div>
+                                </div>
+                                <br>
+
+                                <div class="row px-3">
+                                    <label for="password" class="mb-1"><h6 class="mb-0 text-sm">Password</h6></label>
+                                    <input type="password" class="form-control" id="password" placeholder="Enter your password" th:field="*{password}"required> 
+                                    <div class="invalid-feedback" style="font-size: 12">
+                                        Please input a valid password
+                                    </div>
+                                </div>
+
+                                <br>
+
+                                <button id="loginForm" type="submit" class="btn btn-primary">Sign In</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="py-4 bg-info" style="background-color: #4e73df; color: white">
+                    <div class="row px-3">
+                        <div class="social-contact ml-4 ml-sm-auto"> <span class="fa fa-facebook mr-4 text-sm"></span> <span class="fa fa-google-plus mr-4 text-sm"></span> <span class="fa fa-linkedin mr-4 text-sm"></span> <span class="fa fa-twitter mr-4 mr-sm-5 text-sm"></span> </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer -->
+            <footer class="sticky-footer" style="background-color: #4e73df; color: white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        Copyright &copy; 1997&ndash;<script type="text/javascript">
+                            var today = new Date();
+                            var year = today.getFullYear();
+                            document.write(year);
+                        </script> Resource Placement, Inc. All rights reserved. "R-placement" is a registered trademark of Resource Placement, Inc.
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+        </div>
+
+        <div th:replace="fragments/script :: script"></div>
+    </body>
+</html>

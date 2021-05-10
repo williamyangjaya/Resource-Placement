@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head th:replace="fragments/head :: head"></head>
+    <body id="page-top">
+
+        <!-- Page Wrapper -->
+        <div id="wrapper">
+
+            <head th:replace="fragments/sidebar :: sidebar"></head>
+
+            <!-- Content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column">
+
+                <!-- Main Content -->
+                <div id="content">
+
+                    <!-- Topbar -->
+                    <div th:replace="fragments/header :: header"></div>
+                    <!-- End of Topbar -->
+
+                    <!-- Begin Page Content -->
+                    <div class="container-fluid">
+
+                        <!-- Page Heading -->
+                        <h1 class="h3 mb-2 text-gray-800">Client Table</h1>
+                        <p class="mb-4">Client Table contains client names, emails, industry types, and locations. The information as shown the client table below.</p>
+
+                        <!-- DataTables Example -->
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Client Table</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <button class="btn btn-success" data-toggle="modal" data-target="#clientModal">
+                                        <i class="fa fa-plus"></i> Add Data
+                                    </button>
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>No</th>
+                                                <th>Name</th>
+                                                <th>Instansi</th>
+                                                <th>Email</th>
+                                                <th>Industry Type</th>
+                                                <th>Location</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- End Page Content -->
+
+                </div>
+                <!-- End of Main Content -->
+
+                <!-- Footer -->
+                <footer th:replace="fragments/footer :: footer"></footer>
+                <!-- End of Footer -->
+
+            </div>
+            <!-- End of Content Wrapper -->
+
+        </div>
+        <!-- End of Page Wrapper -->
+
+        <!-- Modal -->
+
+        <div th:fragment="modal">
+            <div class="modal fade" id="clientModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header border-bottom-0">
+                            <h5 class="modal-title" id="exampleModalLabel">Clients</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="formModal" name="myForm" action="#" method="post" class="needs-validation" novalidate>
+                                <div class="form-group">
+                                    <label for="clientName">Name</label>
+                                    <input type="text" id="clientName" name="clientName" class="form-control" aria-describedby="clientNameHelp" placeholder="Enter your name" required>
+                                    <div class="invalid-feedback" style="font-size: 12">
+                                        Please input your name
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="instansi">Instansi</label>
+                                    <input type="text" id="instansi" name="instansi" class="form-control" aria-describedby="instansiHelp" placeholder="Enter your name" required>
+                                    <div class="invalid-feedback" style="font-size: 12">
+                                        Please input your name
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter your email" required>
+                                    <div class="invalid-feedback" style="font-size: 12">
+                                        Please input your email
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="industryType">Industry Type</label>
+                                    <input type="text" id="industryType" name="industryType" class="form-control" aria-describedby="industryTypeHelp" placeholder="Enter your industry type" required>
+                                    <div class="invalid-feedback" style="font-size: 12">
+                                        Please input your industry type
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="location">Location</label>
+                                    <input type="location" id="location" name="location" class="form-control" aria-describedby="locationHelp" placeholder="Enter your location" required>
+                                    <div class="invalid-feedback" style="font-size: 12">
+                                        Please input your location
+                                    </div>
+                                </div>
+                                <div class="modal-footer border-top-0 d-flex justify-content-center">
+                                    <button type="submit" class="btn btn-success">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- End of Modal -->
+
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+
+        <!--Logout Modal-->
+        <div th:replace="fragments/logout-modal :: logout-modal"></div>
+
+        <div th:replace="fragments/script :: script"></div>
+
+        <script src="/js/client/datatables-demo.js"></script>
+    </body>
+</html>

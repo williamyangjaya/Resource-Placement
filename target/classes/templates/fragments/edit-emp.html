@@ -1,0 +1,35 @@
+<div th:fragment="edit-emp">
+    <!-- Modal -->
+    <div class="modal fade" id="empSkillModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0">
+                    <h5 class="modal-title" id="exampleModalLabel">Employee Skill</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="formModal" name="myForm" action="#" method="post" class="needs-validation" novalidate>
+                        <div class="form-group">
+                            <label for="empId">Employee Name</label>
+                            <select class="form-control" id="empId" name="empId" disabled>
+                                <option th:each="employee : ${employees}" th:text="${employee.name}" th:value="${employee.empId}"></option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="skillId">Skill</label>
+                            <select class="form-control" id="skillId" name="skillId">
+                                <option th:each="skill : ${skills}" th:text="${skill.label}" th:value="${skill.skillId}"></option>
+                            </select>
+                        </div>
+                        <div class="modal-footer border-top-0 d-flex justify-content-center">
+                            <button type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Of Modal -->
+</div>

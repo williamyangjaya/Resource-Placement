@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head th:replace="fragments/head :: head"></head>
+    <body id="page-top">
+
+        <!-- Page Wrapper -->
+        <div id="wrapper">
+
+            <head th:replace="fragments/sidebar :: sidebar"></head>
+
+            <!-- Content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column">
+
+                <!-- Main Content -->
+                <div id="content">
+
+                    <!-- Topbar -->
+                    <div th:replace="fragments/header :: header"></div>
+                    <!-- End of Topbar -->
+
+                    <!-- Begin Page Content -->
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-lg-6 offset-3" sec:authorize="hasRole('DEVELOPER')">
+                                <div class="card card-chart">
+                                    <div class="card-header text-center">
+                                        <h4 class="card-title">Submit Your Skill</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="chart-area text-center">
+                                            <div>
+                                                <form id="formModal" th:action="@{/empskill}" method="post" th:object="${empskill}"
+                                                      class="needs-validation" novalidate>
+                                                    <form>
+                                                        <div class="form-group">
+                                                            <label>Employee Name</label>
+                                                            <select class="form-control" id="empId" name="empId">
+                                                                <option th:each="employee : ${employees}" th:text="${employee.name}" th:value="${employee.empId}"></option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Skill</label>
+                                                            <select class="form-control" id="skillId" name="skillId">
+                                                                <option th:each="skill : ${skills}" th:text="${skill.label}" th:value="${skill.skillId}"></option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="modal-footer border-top-0 d-flex justify-content-center">
+                                                            <button type="submit" class="btn btn-success">Submit</button>
+                                                        </div>
+                                                    </form>
+                                            </div>
+                                            <!--<script th:src="@{/js/trainee/submit-judul.js}"></script>-->
+                                            <tbody>
+
+                                            </tbody>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- End Page Content -->
+
+                </div>
+                <!-- End of Main Content -->
+
+                <!-- Footer -->
+                <footer th:replace="fragments/footer :: footer"></footer>
+                <!-- End of Footer -->
+
+            </div>
+            <!-- End of Content Wrapper -->
+
+        </div>
+        <!-- End of Page Wrapper -->
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+
+        <!--Logout Modal-->
+        <div th:replace="fragments/logout-modal :: logout-modal"></div>
+
+        <div th:replace="fragments/script :: script"></div>
+
+        <script src="/js/empskill/datatables-demo.js"></script>
+    </body>
+</html>

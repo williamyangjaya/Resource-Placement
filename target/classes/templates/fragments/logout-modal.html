@@ -1,0 +1,85 @@
+<!--Logout Modal-->
+<div th:fragment="logout-modal">
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a id="logoutButton" class="btn btn-primary" href="/logout">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<div th:fragment="modal">
+    <div class="modal fade" id="employeeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0">
+                    <h5 class="modal-title" id="exampleModalLabel">Employees</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="formModal" name="myForm" action="#" method="post" class="needs-validation" novalidate>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" class="form-control" aria-describedby="nameHelp" placeholder="Enter your name" required>
+                            <div class="invalid-feedback" style="font-size: 12">
+                                Please input your name
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <input type="text" id="gender" name="gender" class="form-control" aria-describedby="genderHelp" placeholder="Enter your gender" required>
+                            <div class="invalid-feedback" style="font-size: 12">
+                                Please input your gender
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="birthdate">Birthdate</label>
+                            <input type="text" id="birthdate" name="birthdate" class="form-control" aria-describedby="birthdateHelp" placeholder="Enter your birthdate" required>
+                            <div class="invalid-feedback" style="font-size: 12">
+                                Please input your birthdate
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter your email" required>
+                            <div class="invalid-feedback" style="font-size: 12">
+                                Please input your email
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="jabatan">Jabatan</label>
+                            <input type="jabatan" id="jabatan" name="jabatan" class="form-control" aria-describedby="jabatanHelp" placeholder="Enter your jabatan" required>
+                            <div class="invalid-feedback" style="font-size: 12">
+                                Please input your jabatan
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="skill">Skill</label>
+                            <input type="skill" id="skill" name="skill" class="form-control" aria-describedby="skillHelp" placeholder="Enter your skill" required>
+                            <div class="invalid-feedback" style="font-size: 12">
+                                Please input your skill
+                            </div>
+                        </div>
+                        <div class="modal-footer border-top-0 d-flex justify-content-center">
+                            <button type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
